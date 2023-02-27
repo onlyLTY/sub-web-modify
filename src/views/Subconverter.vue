@@ -464,6 +464,7 @@ export default {
         },
         customBackend: {
           "本地局域网版后端": "http://127.0.0.1:25500/sub?",
+          "自建增强型后端【vless+hysteria】": "https://suc.lty.wiki/sub?",
           "肥羊增强型后端【vless+hysteria】": "https://api.v1.mk/sub?",
           "肥羊备用后端【vless+hysteria】": "https://sub.d1.mk/sub?",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one/sub?",
@@ -474,6 +475,7 @@ export default {
         },
         backendOptions: [
           {value: "http://127.0.0.1:25500/sub?"},
+          {value: "https://suc.lty.wiki/sub?"},
           {value: "https://api.v1.mk/sub?"},
           {value: "https://sub.d1.mk/sub?"},
           {value: "https://api.tsutsu.one/sub?"},
@@ -488,7 +490,7 @@ export default {
             options: [
               {
                 label: "默认",
-                value: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini"
+                value: "https://raw.lty.wiki/onlyLTY/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini"
               },
               {
                 label: "默认（自动测速）",
@@ -879,10 +881,10 @@ export default {
       },
       form: {
         sourceSubUrl: "",
-        clientType: "",
-        customBackend: "https://api.v1.mk/sub?",
+        clientType: "clash",
+        customBackend: "https://suc.lty.wiki/sub?",
         shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/Meilieage/webcdn/main/rule/Area_Media_NoAuto.ini",
+        remoteConfig: "https://raw.lty.wiki/onlyLTY/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_AdblockPlus.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -893,12 +895,12 @@ export default {
         nodeList: false,
         extraset: false,
         tls13: false,
-        udp: false,
+        udp: true,
         xudp: false,
         tfo: false,
         sort: false,
         expand: true,
-        scv: false,
+        scv: true,
         fdn: false,
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
@@ -983,13 +985,6 @@ export default {
         document.getElementsByTagName('body')[0].setAttribute('class', 'light-mode');
         window.localStorage.setItem('localTheme', 'light-mode');
       }
-    },
-    tanchuang() {
-      this.$alert(`<div style="text-align:center;font-size:15px"><strong><span style="font-size:20px">本站官方TG交流群：</span><span><a href="https://t.me/feiyangdigital" target="_blank" style="color:red;font-size:20px;text-decoration:none">点击加入</a></span></strong></br><strong><span style="font-size:20px">IEPL高端机场（<span style="color:blue">原生支持各种流媒体</span>）：</span><span><a href="https://www.mcwy.org" style="color:red;font-size:20px;text-decoration:none">点击注册</a></span></strong></br><strong><span style="font-size:20px">奈飞合租网站（<span style="color:blue">通用89折优惠码：feiyang</span>）：</span><span><a href="https://www.ihezu.org" style="color:red;font-size:20px;text-decoration:none">点击上车奈飞合租</a></span></strong></br><strong><span style="font-size:20px">IOS外区应用代购：</span><span><a href="https://fk.myue.club" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br><strong><span style="font-size:20px">115蓝光4K原盘内部群：</span><span><a href="https://www.wulihub.com.cn/gc/Wvn2nV/index.htm" style="color:red;font-size:20px;text-decoration:none">点击了解</a></span></strong></br><strong><span style="font-size:20px">牧场流媒体支持状态实时检测图：</span><span><a href="https://nf.mccloud.vip" style="color:red;font-size:20px;text-decoration:none">点击查看</a></span></strong></br>本站服务器赞助机场-牧场物语，是一家拥有BGP中继+IEPL企业级内网专线的高端机场，适合各个价位要求的用户，牧场物语采用最新的奈飞非自制剧解决方案，出口随机更换IP，确保尽可能的每个用户可以用上独立IP，以此来稳定解决奈飞非自制剧的封锁，并推出7*24小时奈飞非自制剧节点自动检测系统，用户再也不用自己手动一个个的乱试节点了，目前牧场的新加坡，台湾等节区域点均可做到24H稳定非自制剧观看！</br></div>`, '信息面板', {
-        confirmButtonText: '确定',
-        dangerouslyUseHTMLString: true,
-        customClass: 'msgbox'
-      });
     },
     onCopy() {
       this.$message.success("已复制");
